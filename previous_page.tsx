@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { db, storage } from "@/lib/firebase";
@@ -181,7 +181,7 @@ export default function CommunicationsHub() {
   );
 
   const selectedCauses = causes.filter(c => selectedCauseIds.includes(c.id));
-  const causeNamesText = selectedCauses.map(c => c.name).join(', ') || '—';
+  const causeNamesText = selectedCauses.map(c => c.name).join(', ') || 'ΓÇö';
 
   const typeLabels: Record<string, string> = {
     contribution_confirmation: "Contribution Confirmation",
@@ -327,7 +327,7 @@ export default function CommunicationsHub() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                       </svg>
                       <p className="text-xs text-gray-500">Drag & drop files or <span className="text-white underline">browse</span></p>
-                      <p className="text-[10px] text-gray-600 mt-1">Images, PDFs, Videos — max 20MB each</p>
+                      <p className="text-[10px] text-gray-600 mt-1">Images, PDFs, Videos ΓÇö max 20MB each</p>
                     </div>
                   ) : (
                     <div className="w-full space-y-2">
@@ -344,7 +344,7 @@ export default function CommunicationsHub() {
                           )}
                           <div className="flex-1 min-w-0">
                             <p className="text-xs text-white truncate">{f.name}</p>
-                            <p className="text-[10px] text-gray-600">{(f.size / 1024).toFixed(1)} KB {f.uploaded ? <span className="text-green-400">✓ Uploaded</span> : uploading ? <span className="text-yellow-400">Uploading…</span> : ''}</p>
+                            <p className="text-[10px] text-gray-600">{(f.size / 1024).toFixed(1)} KB {f.uploaded ? <span className="text-green-400">Γ£ô Uploaded</span> : uploading ? <span className="text-yellow-400">UploadingΓÇª</span> : ''}</p>
                           </div>
                           <button
                             type="button"
@@ -447,7 +447,7 @@ export default function CommunicationsHub() {
                   </div>
 
                   <p className="text-white text-sm font-semibold">Assalamu Alaikum, Donor Name,</p>
-                  {notes && <p className="text-white/50 text-xs leading-relaxed">{notes.substring(0, 120)}{notes.length > 120 ? '…' : ''}</p>}
+                  {notes && <p className="text-white/50 text-xs leading-relaxed">{notes.substring(0, 120)}{notes.length > 120 ? 'ΓÇª' : ''}</p>}
 
                   {/* Summary */}
                   <div className="rounded-lg p-4 space-y-2 mt-2" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>

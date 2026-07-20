@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { db } from "@/lib/firebase";
 import { collection } from "firebase/firestore";
 import { addDoc } from "@/lib/db-sync";
@@ -31,31 +31,31 @@ export async function POST(req: Request) {
     if (type === "contribution_confirmation") {
       eyebrow = "CONTRIBUTION CONFIRMED";
       dua = {
-        arabic: "رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+        arabic: "╪▒┘Ä╪¿┘Ä┘æ┘å┘Ä╪º ╪¬┘Ä┘é┘Ä╪¿┘Ä┘æ┘ä┘Æ ┘à┘É┘å┘Ä┘æ╪º █û ╪Ñ┘É┘å┘Ä┘æ┘â┘Ä ╪ú┘Ä┘å╪¬┘Ä ╪º┘ä╪│┘Ä┘æ┘à┘É┘è╪╣┘Å ╪º┘ä┘Æ╪╣┘Ä┘ä┘É┘è┘à┘Å",
         english: "Our Lord, accept [this] from us. Indeed You are the Hearing, the Knowing."
       };
     } else if (type === "project_progress") {
       eyebrow = "PROJECT PROGRESS UPDATE";
       dua = {
-        arabic: "رَبِّ زِدْنِي عِلْمًا",
+        arabic: "╪▒┘Ä╪¿┘É┘æ ╪▓┘É╪»┘Æ┘å┘É┘è ╪╣┘É┘ä┘Æ┘à┘ï╪º",
         english: "My Lord, increase me in knowledge."
       };
     } else if (type === "allocation_confirmation") {
       eyebrow = "FUNDS ALLOCATED";
       dua = {
-        arabic: "اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ",
+        arabic: "╪º┘ä┘ä┘Ä┘æ┘ç┘Å┘à┘Ä┘æ ╪¿┘Ä╪º╪▒┘É┘â┘Æ ┘ä┘Ä┘ç┘Å┘à┘Æ ┘ü┘É┘è┘à┘Ä╪º ╪▒┘Ä╪▓┘Ä┘é┘Æ╪¬┘Ä┘ç┘Å┘à┘Æ",
         english: "O Allah, bless them in what You have provided them."
       };
     } else if (type === "completion_report") {
       eyebrow = "COMPLETION & IMPACT REPORT";
       dua = {
-        arabic: "الْحَمْدُ لِلَّهِ الَّذِي بِنِعْمَتِهِ تَتِمُّ الصَّالِحَاتُ",
+        arabic: "╪º┘ä┘Æ╪¡┘Ä┘à┘Æ╪»┘Å ┘ä┘É┘ä┘Ä┘æ┘ç┘É ╪º┘ä┘Ä┘æ╪░┘É┘è ╪¿┘É┘å┘É╪╣┘Æ┘à┘Ä╪¬┘É┘ç┘É ╪¬┘Ä╪¬┘É┘à┘Å┘æ ╪º┘ä╪╡┘Ä┘æ╪º┘ä┘É╪¡┘Ä╪º╪¬┘Å",
         english: "All praise is to Allah by whose grace good deeds are completed."
       };
     } else {
       eyebrow = "OFFICIAL COMMUNICATION";
       dua = {
-        arabic: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+        arabic: "╪▒┘Ä╪¿┘Ä┘æ┘å┘Ä╪º ╪ó╪¬┘É┘å┘Ä╪º ┘ü┘É┘è ╪º┘ä╪»┘Å┘æ┘å┘Æ┘è┘Ä╪º ╪¡┘Ä╪│┘Ä┘å┘Ä╪⌐┘ï ┘ê┘Ä┘ü┘É┘è ╪º┘ä╪ó╪«┘É╪▒┘Ä╪⌐┘É ╪¡┘Ä╪│┘Ä┘å┘Ä╪⌐┘ï ┘ê┘Ä┘é┘É┘å┘Ä╪º ╪╣┘Ä╪░┘Ä╪º╪¿┘Ä ╪º┘ä┘å┘Ä┘æ╪º╪▒┘É",
         english: "Our Lord, give us in this world [that which is] good and in the Hereafter [that which is] good and protect us from the punishment of the Fire."
       };
     }
@@ -114,7 +114,7 @@ export async function POST(req: Request) {
         
         // Personalize for each recipient
         const html = generateLetterEmailTemplate({
-          title: `${heading} — Daarayn Foundation`,
+          title: `${heading} ΓÇö Daarayn Foundation`,
           eyebrow: eyebrow,
           greeting: `Assalamu Alaikum, ${recipient.name},`,
           contributionSummary: [
@@ -138,7 +138,7 @@ export async function POST(req: Request) {
           try {
             const result = await sendEmail({
               to: recipient.email,
-              subject: `${heading} — Daarayn Foundation`,
+              subject: `${heading} ΓÇö Daarayn Foundation`,
               html,
               attachments: resolvedAttachments
             });
